@@ -1,5 +1,7 @@
 package com.github.rafaelfernandes.users.service;
 
+import java.util.UUID;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -29,8 +31,9 @@ public class UserService {
                 });
 
         var user = request.toEntity();
+        
         user.setPassword(bCryptPasswordEncoder.encode(request.password()));
-
+        user.setId(UUID.randomUUID());
         final var created = respository.save(user);
 
         return UserDto.fromEntity(created);

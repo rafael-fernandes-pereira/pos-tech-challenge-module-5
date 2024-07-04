@@ -34,7 +34,7 @@ public record UserRegisterRequest(
             .name(name)
             .password(password)
             .email(email)
-            .role(Objects.nonNull(role) ? role : UserRoles.CUSTOMER)
+            .userRoles(Objects.nonNull(role) ? role : UserRoles.CUSTOMER)
             .build();
     }
 

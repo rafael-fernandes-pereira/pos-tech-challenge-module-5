@@ -1,5 +1,7 @@
 package com.github.rafaelfernandes.users.entity;
 
+import java.util.UUID;
+
 import com.github.rafaelfernandes.users.enums.UserRoles;
 
 import jakarta.persistence.*;
@@ -11,12 +13,11 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
+@Table(name = "tbl_user")
 public class UserEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private UUID id;
 
     private String email;
 
@@ -24,6 +25,6 @@ public class UserEntity {
 
     private String name;
 
-    private UserRoles role;
+    private UserRoles userRoles;
 
 }
