@@ -26,7 +26,7 @@ public class ProductController {
     private final ProductService service;
 
     @PostMapping("/")
-    public ResponseEntity<UUID> createProduct(@Valid @RequestBody ProductResponse productRequest) {
+    public ResponseEntity<UUID> createProduct(@Valid @RequestBody ProductRequest productRequest) {
         var productId = service.createProduct(productRequest);
         return ResponseEntity.ok(productId);
     }

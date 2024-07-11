@@ -21,7 +21,7 @@ public class ProductService {
 
     private final ProductRepository repository;
 
-    public UUID createProduct(@Valid ProductResponse productRequest) {
+    public UUID createProduct(@Valid ProductRequest productRequest) {
         
         var newProduct = this.toEntity(productRequest);
         newProduct.setId(UUID.randomUUID());
@@ -33,7 +33,7 @@ public class ProductService {
 
     }
 
-    private ProductEntity toEntity(ProductResponse request){
+    private ProductEntity toEntity(ProductRequest request){
 
         return ProductEntity.builder()
             .name(request.name())

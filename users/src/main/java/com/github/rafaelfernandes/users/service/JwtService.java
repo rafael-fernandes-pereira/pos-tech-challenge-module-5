@@ -31,7 +31,6 @@ public class JwtService {
         claims.put("role", userRole);
 
         if (userRole == UserRoles.CUSTOMER) {
-            claims.put("cartId", UUID.randomUUID().toString());
             claims.put("userId", id);
         }
 
