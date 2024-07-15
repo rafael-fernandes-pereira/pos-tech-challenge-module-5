@@ -7,10 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="payment" />
         <module name="carts" />
+        <module name="eureka" />
+        <module name="payment" />
         <module name="checkout" />
         <module name="users" />
+        <module name="gateway" />
         <module name="products" />
       </profile>
     </annotationProcessing>
@@ -19,6 +21,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="carts" options="-parameters" />
       <module name="checkout" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="payment" options="-parameters" />
       <module name="products" options="-parameters" />
       <module name="users" options="-parameters" />
