@@ -27,8 +27,8 @@ public class JwtService {
         return (String) extractAllClaims(token).get("role");
     }
 
-    public Integer extractUserId(String token) {
-        return (Integer) extractAllClaims(token).get("userId");
+    public String extractUserId(String token) {
+        return (String) extractAllClaims(token).get("userId");
     }
 
     public Claims extractAllClaims(String token) {
