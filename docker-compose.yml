@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  eureka: &eureka
+    image: eclipse-temurin:17.0.2_8-jre-alpine
+    network_mode: host
+    container_name: eureka-container
+    volumes:
+      - ./eureka/target:/app/
+    working_dir: /app
+    command: ["java", "-jar", "eureka-0.0.1-SNAPSHOT.jar"]
+
+  gateway:
+    <<: *eureka
+    container_name: gateway-container
+    volumes:
+      - ./gateway/target:/app/
+    command: [ "java", "-jar", "gateway-0.0.1-SNAPSHOT.jar" ]
+    ports:
+      - 8888:8888
+
+  users:
+    <<: *eureka
+    container_name: users-container
+    volumes:
+      - ./users/target:/app/
+    command: [ "java", "-jar", "users-0.0.1-SNAPSHOT.jar" ]
+
+  products:
+    <<: *eureka
+    container_name: products-container
+    volumes:
+      - ./products/target:/app/
+    command: [ "java", "-jar", "products-0.0.1-SNAPSHOT.jar" ]
+
+
+  checkout:
+    <<: *eureka
+    container_name: checkout-container
+    volumes:
+      - ./checkout/target:/app/
+    command: [ "java", "-jar", "checkout-0.0.1-SNAPSHOT.jar" ]
+
+  payment:
+    <<: *eureka
+    container_name: payment-container
+    volumes:
+      - ./payment/target:/app/
+    command: [ "java", "-jar", "payment-0.0.1-SNAPSHOT.jar" ]
+
+
+
+

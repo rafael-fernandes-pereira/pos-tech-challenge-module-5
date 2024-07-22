@@ -1,0 +1,25 @@
+# TECH CHALLENGE 5
+
+Repositório para o Tech Challenge 5
+
+## Tecnologias Usadas
+* Java 17
+* Docker
+* Docker Compose
+* Make
+
+## Iniciando a Aplicação
+
+Para iniciar a aplicação, utilize o comando:
+
+```shell
+make run-docker
+```
+
+## Uso das Collections
+
+Utilize a collection Postman fornecida para testar a aplicação:
+TECH CHALLENGE 5.postman_collection.json
+
+## Fluxo
+Siga a ordem dos requests na collection do Postman para testar e validar os endpoints da aplicação.

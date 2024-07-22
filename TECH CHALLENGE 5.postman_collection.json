@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "394a5188-4a09-45e7-b563-c83e7a5d4435",
+		"name": "TECH CHALLENGE 5",
+		"description": "Collections para auxiliar na validação do Tech Challenge 5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8869013"
+	},
+	"item": [
+		{
+			"name": "001 - CREATE USER",
+			"item": [
+				{
+					"name": "CREATE LOGIN CUSTOMER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tigrinha\",\r\n  \"email\": \"tigrinha@gmail.com\",\r\n  \"password\": \"123456abdcess\",\r\n  \"role\": \"CUSTOMER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE LOGIN ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Zaza\",\r\n  \"email\": \"zaza@gmail.com\",\r\n  \"password\": \"123456abdcess\",\r\n  \"role\": \"ADMINISTRATOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "002 - LOGIN",
+			"item": [
+				{
+					"name": "LOGIN CUSTOMER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tigrinha@gmail.com\",\r\n    \"password\": \"123456abdcess\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login/authenticate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"zaza@gmail.com\",\r\n    \"password\": \"123456abdcess\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login/authenticate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VALIDATE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInN1YiI6InphemFAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyNjQ2LCJleHAiOjE3MjEwOTQ0NDZ9.5cJix37ofeW8jZa6GKXBoZlYBmsYVDFhO3h0rHT4w6I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/login/validate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "003 - PRODUCTS",
+			"item": [
+				{
+					"name": "CREATE PRODUCT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInN1YiI6InphemFAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyNjQ2LCJleHAiOjE3MjEwOTQ0NDZ9.5cJix37ofeW8jZa6GKXBoZlYBmsYVDFhO3h0rHT4w6I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Example Product\",\r\n  \"amount\": 10,\r\n  \"price\": 29.99,\r\n  \"image_url\": \"http://example.com/image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/products/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PRODUCT",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VySWQiOiJjODYxMjBiOS02MTcxLTQ5NDQtODAzZS03ZjM5N2MzMjE3MTgiLCJzdWIiOiJ0aWdyaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTI4MzIsImV4cCI6MTcyMTA5NDYzMn0.iy4KXKVYEIG5F13pPIOyqcGswRL35fCX5u8NWFllH4A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/products/7882c564-0d14-4834-ad97-5dbf8d993b28",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"7882c564-0d14-4834-ad97-5dbf8d993b28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VySWQiOiJjODYxMjBiOS02MTcxLTQ5NDQtODAzZS03ZjM5N2MzMjE3MTgiLCJzdWIiOiJ0aWdyaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTI4MzIsImV4cCI6MTcyMTA5NDYzMn0.iy4KXKVYEIG5F13pPIOyqcGswRL35fCX5u8NWFllH4A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/products/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "004 - CART",
+			"item": [
+				{
+					"name": "ADD CART",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VySWQiOiJjODYxMjBiOS02MTcxLTQ5NDQtODAzZS03ZjM5N2MzMjE3MTgiLCJzdWIiOiJ0aWdyaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTI4MzIsImV4cCI6MTcyMTA5NDYzMn0.iy4KXKVYEIG5F13pPIOyqcGswRL35fCX5u8NWFllH4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"7882c564-0d14-4834-ad97-5dbf8d993b28\",\r\n    \"amount\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cart/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW CART",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VySWQiOiJjODYxMjBiOS02MTcxLTQ5NDQtODAzZS03ZjM5N2MzMjE3MTgiLCJzdWIiOiJ0aWdyaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTI4MzIsImV4cCI6MTcyMTA5NDYzMn0.iy4KXKVYEIG5F13pPIOyqcGswRL35fCX5u8NWFllH4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"7882c564-0d14-4834-ad97-5dbf8d993b28\",\r\n    \"amount\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cart/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "005 - CHECKOUT",
+			"item": [
+				{
+					"name": "RESUME",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VySWQiOiJjODYxMjBiOS02MTcxLTQ5NDQtODAzZS03ZjM5N2MzMjE3MTgiLCJzdWIiOiJ0aWdyaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTUyNjksImV4cCI6MTcyMTA5NzA2OX0.3iotYMGjidImoWRRKaBzBEoYW7UlpivUV6gHaNQE5k4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/payment/resume",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment",
+								"resume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CHECKOUT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJ1c2VySWQiOiJjODYxMjBiOS02MTcxLTQ5NDQtODAzZS03ZjM5N2MzMjE3MTgiLCJzdWIiOiJ0aWdyaW5oYUBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTUyNjksImV4cCI6MTcyMTA5NzA2OX0.3iotYMGjidImoWRRKaBzBEoYW7UlpivUV6gHaNQE5k4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"BOLETO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/payment/checkout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
